@@ -8,15 +8,15 @@ import tensorflow as tf
 from utils import load_and_prep_image, classes_and_models, update_logger, predict_json
 
 # Setup environment credentials
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = ""
-PROJECT = "emanuel-ml-playground"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "food-vision-gcp-72838e6b545b.json"
+PROJECT = "food-vision-gcp"
 REGION = "us-central1"
 
 # Streamlit
 st.title("Welcome to GCP Food Vision 🍔📸 ")
 st.header("Identify what food is in your photos using ML models hosted in GCP AI Platform!")
 
-@st.cache
+# @st.cache
 def make_prediction(image, model, class_names):
     """
     Takes an image and use a Tensorflow model to make predictions.
