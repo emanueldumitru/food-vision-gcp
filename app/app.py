@@ -8,7 +8,7 @@ import tensorflow as tf
 from utils import load_and_prep_image, classes_and_models, update_logger, predict_json
 
 # Setup environment credentials
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "food-vision-gcp-72838e6b545b.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "food-vision-gcp-6b66be2c0837.json"
 PROJECT = "food-vision-gcp"
 REGION = "us-central1"
 
