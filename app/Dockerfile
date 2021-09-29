@@ -1,14 +1,16 @@
 FROM python:3.7
 
-EXPOSE 8080
+# Setup the working directory
+WORKDIR /app
 
-RUN pip install -U pip
-
-COPY requirements.txt app/requirements.txt
-RUN pip install -r app/requirements.txt
-
+# Copy files
 COPY . /app
-WORKDIR app
+
+#Install requirements
+RUN pip install -r /app/requirements.txt
+
+# Expose port 8080
+EXPOSE 8080
 
 # Run
 ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8080", "--server.address=0.0.0.0"]
